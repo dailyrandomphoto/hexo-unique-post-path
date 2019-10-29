@@ -52,6 +52,15 @@ You can define the path generating algorithm in the `_config.yml` file.
 +   path_type: nanoid
 +   size: 20
 ```
+or
+```diff
+#_cofig.yml
+
++ unique_post_path:
++   path_type: date-seq
++   size: 2
++   prefix: YYYYMMDD
+```
 
 Available `path_type`:
 
@@ -62,6 +71,19 @@ cuid-slug | 7-10 | `a-z0-9` |  |  | use [cuid.slug()](https://github.com/ericell
 nanoid | 21 | `A-Za-z0-9_-` | size | 21 | use [nanoid()](https://github.com/ai/nanoid) generated string. <br>e.g. `EwUTt2eoka-oEV5kf-o0O`
 nanoid-simple | 24 | `a-z0-9` | size | 24 | use [nanoid/generate](https://github.com/ai/nanoid) generated string. <br>e.g. `pfldm3gg8h9psydphotqe71d`
 nanoid-lowercase | 26 | `a-z` | size | 26 | use [nanoid/generate](https://github.com/ai/nanoid) generated string. <br>e.g. `jsjxoibprplrdoitjmppotjrnm`
+seq | 1~ | `0-9` | size<br>start | 1<br>1 | 1, 2, 3,...<br>001, 002, 003,...
+prefix-seq | 1~ | `A-Za-z0-9_-` | size<br>start<br>prefix | 1<br>1<br>`<none>` | items-1, items-2, items-3,...<br>items-001, items-002, items-003,...
+date-seq | 1~ | `A-Za-z0-9_-` | size<br>start<br>prefix | 2<br>1<br>YYYYMMDD | 2019102901, 2019102902, 2019103001, ...<br>2019-10-29-001, 2019-10-29-002, 2019-10-30-001,...
+
+Sample of valid `prefix` option for `date-seq`:
+```
+YYYYMMDD (default)
+YYYY-MM-DD-
+YYMMDD-
+YYYYMM
+YYYY
+```
+
 
 You can add your own path generating algorithm by define [Custom functions](#define-custom-functions).
 

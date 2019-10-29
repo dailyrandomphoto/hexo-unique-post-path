@@ -2,7 +2,7 @@
 
 
 const unique_post_path_filter = require('../lib/unique_post_path_filter');
-const register = require('../lib/id-generators').register;
+const register = require('../').register;
 
 describe('register', () => {
 

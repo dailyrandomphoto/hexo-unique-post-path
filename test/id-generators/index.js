@@ -106,4 +106,8 @@ describe('id-generators', () => {
       id.should.be.a('string').have.lengthOf(18);
     });
   });
+
+  require('./seq');
+  require('./prefix-seq');
+  require('./date-seq');
 });

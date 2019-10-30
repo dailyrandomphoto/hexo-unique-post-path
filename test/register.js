@@ -2,7 +2,7 @@
 
 
 const unique_post_path_filter = require('../lib/unique_post_path_filter');
-const register = require('../').register;
+const { register } = require('../');
 
 describe('register', () => {
 
@@ -18,15 +18,18 @@ describe('register', () => {
   });
 
   it('should use option in the custom function', () => {
-    register('my_path_gen2', function(option) {
+    register('my_custom_path', function(option) {
       let size = option.size || 8;
-      return (title) => title.toLowerCase().replace(/[^\w]/g, '').substring(0, size);
+      let prefix = option.prefix || 'items-';
+      return function(title) {
+        return prefix + title.toLowerCase().replace(/[^\w]/g, '').substring(0, size);
+      };
     });
 
-    const config = {path_type: 'my_path_gen2', size: 6};
+    const config = {path_type: 'my_custom_path', size: 6};
     const data = {title: 'Hello World!'};
     unique_post_path_filter(config)(data);
-    data.slug.should.eql('hellow');
+    data.slug.should.eql('items-hellow');
   });
 
 });

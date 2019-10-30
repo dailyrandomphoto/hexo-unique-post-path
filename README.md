@@ -10,6 +10,13 @@
 
 This plug-in helps Hexo create new posts with unique auto-generated paths.
 
+Just like this.
+```sh
+$ hexo new2
+
+INFO  Created: ./source/_posts/ck20kqmij0001ieyn4es62xh7.md
+```
+
 
 ## Installation
 
@@ -28,6 +35,10 @@ hexo new2 [layout] [title]
 
 e.g.
 ```sh
+$ hexo new2 "Hello World!"
+
+INFO  Created: ./source/_posts/ck2c0zo1y0001gyyn5c2ma96m.md
+
 $ hexo new2
 
 INFO  Created: ./source/_posts/ck20kqmij0001ieyn4es62xh7.md
@@ -114,7 +125,7 @@ Then register a generator function.
 The generator function should return a function that returns a string.
 e.g.
 ```js
-const register = require('hexo-unique-post-path').register;
+const { register } = require('hexo-unique-post-path');
 
 register('my_custom_path', function(option) {
   let size = option.size || 8;
@@ -136,6 +147,11 @@ register('my_custom_path', function(option) {
 $ hexo new2 "Hello World!"
 => articles-hellowor.md
 ```
+
+## Related
+- [id-generators](https://github.com/dailyrandomphoto/id-generators) - API for this module.
+- [Awesome Unique ID](https://github.com/grantcarthew/awesome-unique-id) - A curated list of awesome Unique ID libraries and resources.
+
 
 ## License
 Copyright (c) 2019 dailyrandomphoto. Licensed under the [MIT license][license-url].

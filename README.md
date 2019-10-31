@@ -1,7 +1,6 @@
 # hexo-unique-post-path
 
 [![NPM Version][npm-version-image]][npm-url]
-[![NPM Downloads][npm-downloads-image]][npm-url]
 [![LICENSE][license-image]][license-url]
 [![Build Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
@@ -163,10 +162,10 @@ Copyright (c) 2019 dailyrandomphoto. Licensed under the [MIT license][license-ur
 [dependencies-url]: https://david-dm.org/dailyrandomphoto/hexo-unique-post-path
 [devDependencies-url]: https://david-dm.org/dailyrandomphoto/hexo-unique-post-path?type=dev
 
-[npm-downloads-image]: https://img.shields.io/npm/dm/hexo-unique-post-path.svg
-[npm-version-image]: https://img.shields.io/npm/v/hexo-unique-post-path.svg
-[license-image]: https://img.shields.io/npm/l/hexo-unique-post-path.svg
-[travis-image]: https://img.shields.io/travis/dailyrandomphoto/hexo-unique-post-path/master
-[coveralls-image]: https://coveralls.io/repos/github/dailyrandomphoto/hexo-unique-post-path/badge.svg?branch=master
-[dependencies-image]: https://david-dm.org/dailyrandomphoto/hexo-unique-post-path/status.svg
-[devDependencies-image]: https://david-dm.org/dailyrandomphoto/hexo-unique-post-path/dev-status.svg
+[npm-downloads-image]: https://img.shields.io/npm/dm/hexo-unique-post-path
+[npm-version-image]: https://img.shields.io/npm/v/hexo-unique-post-path
+[license-image]: https://img.shields.io/npm/l/hexo-unique-post-path
+[travis-image]: https://img.shields.io/travis/dailyrandomphoto/hexo-unique-post-path
+[coveralls-image]: https://img.shields.io/coveralls/github/dailyrandomphoto/hexo-unique-post-path
+[dependencies-image]: https://img.shields.io/david/dailyrandomphoto/hexo-unique-post-path
+[devDependencies-image]: https://img.shields.io/david/dev/dailyrandomphoto/hexo-unique-post-path

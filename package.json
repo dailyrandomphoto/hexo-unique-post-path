@@ -4,9 +4,11 @@
   "description": "This plug-in helps Hexo create new posts with unique auto-generated paths.",
   "main": "lib/index.js",
   "scripts": {
-    "eslint": "eslint .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "mocha test/index.js",
-    "test-cov": "nyc npm run test"
+    "test:cov": "nyc npm run test",
+    "test:loop": "while npm test --silent; do :; done"
   },
   "dependencies": {
     "chalk": "^2.4.2",

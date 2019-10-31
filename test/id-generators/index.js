@@ -3,11 +3,8 @@
 const generators = require('../../lib/id-generators');
 
 describe('id-generators', () => {
-
-  // before(() => hexo.init());
-
   it('should return a function', () => {
-    const generator = generators.get('cuid');
+    const generator = generators.get();
     generator.should.be.a('function');
     const gen = generator({});
     gen.should.be.a('function');

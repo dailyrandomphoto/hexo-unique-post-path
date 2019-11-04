@@ -1,6 +1,6 @@
 {
   "name": "hexo-unique-post-path",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This plug-in helps Hexo create new posts with unique auto-generated paths.",
   "main": "lib/index.js",
   "scripts": {
@@ -11,16 +11,17 @@
     "test:loop": "while npm test --silent; do :; done"
   },
   "dependencies": {
-    "id-generators": "^1.0.0"
+    "chalk": "^2.4.2",
+    "hexo-fs": "^2.0.0",
+    "id-generators": "^1.0.0",
+    "tildify": "^2.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^6.6.0",
     "eslint-config-hexo": "^3.0.0",
-    "hexo-fs": "^2.0.0",
     "mocha": "^6.2.1",
-    "nyc": "^14.1.1",
-    "tildify": "^2.0.0"
+    "nyc": "^14.1.1"
   },
   "keywords": [
     "hexo",

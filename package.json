@@ -1,6 +1,6 @@
 {
   "name": "hexo-unique-post-path",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This plug-in helps Hexo create new posts with unique auto-generated paths.",
   "main": "lib/index.js",
   "scripts": {

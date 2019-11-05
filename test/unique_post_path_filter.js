@@ -18,29 +18,29 @@ describe('unique_post_path_filter', () => {
     expect(data.slug).to.be.an('undefined');
   });
 
-  it('should set slug: path_type = undefined', () => {
+  it('should set slug: type = undefined', () => {
     const config = {auto: true};
     const data = {title: 'title'};
     unique_post_path_filter(config)(data);
     data.slug.should.be.a('string');
   });
 
-  it('should set slug: path_type = cuid', () => {
-    const config = {auto: true, path_type: 'cuid'};
+  it('should set slug: type = cuid', () => {
+    const config = {auto: true, type: 'cuid'};
     const data = {title: 'title'};
     unique_post_path_filter(config)(data);
     data.slug.should.be.a('string');
   });
 
-  it('should set slug: path_type = nanoid', () => {
-    const config = {auto: true, path_type: 'nanoid'};
+  it('should set slug: type = nanoid', () => {
+    const config = {auto: true, type: 'nanoid'};
     const data = {title: 'title'};
     unique_post_path_filter(config)(data);
     data.slug.should.be.a('string');
   });
 
-  it('should set slug: path_type = seq', () => {
-    const config = {auto: true, path_type: 'seq'};
+  it('should set slug: type = seq', () => {
+    const config = {auto: true, type: 'seq'};
     const data = {title: 'title'};
     unique_post_path_filter(config)(data);
     data.slug.should.be.a('string').eql('19');
@@ -54,7 +54,7 @@ describe('unique_post_path_filter', () => {
   });
 
   it('should set slug: --type = seq', () => {
-    const config = {auto: true, path_type: 'nanoid'};
+    const config = {auto: true, type: 'nanoid'};
     const data = {title: 'title', type: 'seq'};
     unique_post_path_filter(config)(data);
     data.slug.should.be.a('string').eql('19');

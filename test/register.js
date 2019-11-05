@@ -9,7 +9,7 @@ describe('register', () => {
       return title => title.toLowerCase().replace(/[^\w]/g, '');
     });
 
-    const config = {auto: true, path_type: 'my_path_gen'};
+    const config = {auto: true, type: 'my_path_gen'};
     const data = {title: 'Hello World!'};
     unique_post_path_filter(config)(data);
     data.slug.should.eql('helloworld');
@@ -24,7 +24,7 @@ describe('register', () => {
       };
     });
 
-    const config = {auto: true, path_type: 'my_custom_path', size: 6};
+    const config = {auto: true, type: 'my_custom_path', size: 6};
     const data = {title: 'Hello World!'};
     unique_post_path_filter(config)(data);
     data.slug.should.eql('items-hellow');

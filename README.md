@@ -25,7 +25,7 @@ npm install --save hexo-unique-post-path
 
 ## Usages
 
-There are two ways to use this plug-in to create new posts with unique auto-generated paths.
+There are tree ways to use this plug-in to create new posts with unique auto-generated paths.
 
 ### 1. Use `hexo new2` command
 ```sh
@@ -55,11 +55,12 @@ You can define the default value of `title` in the `_config.yml` file.
 ```
 
 You can define the path generating algorithm in the `_config.yml` file.
+e.g.
 ```diff
 #_cofig.yml
 
 + unique_post_path:
-+   path_type: nanoid
++   type: nanoid
 +   size: 20
 ```
 or
@@ -67,14 +68,14 @@ or
 #_cofig.yml
 
 + unique_post_path:
-+   path_type: date-seq
++   type: date-seq
 +   size: 2
 +   prefix: YYYYMMDD
 ```
 
-Available `path_type`:
+Available `type`:
 
-path_type | length | character set |options | default | description
+type | length | character set |options | default | description
 --- | --- | --- | --- | --- | ---
 cuid (default) | 25 | `a-z0-9`, start with `c` |  |  | use [cuid()](https://github.com/ericelliott/cuid) generated string. <br>e.g. `ck2bi7fxf00013ryng5jr1rer`
 cuid-slug | 7-10 | `a-z0-9` |  |  | use [cuid.slug()](https://github.com/ericelliott/cuid) generated string. <br>e.g. `xh23npi`
@@ -83,7 +84,7 @@ nanoid-simple | 24 | `a-z0-9` | size | 24 | use [nanoid/generate](https://github
 nanoid-lowercase | 26 | `a-z` | size | 26 | use [nanoid/generate](https://github.com/ai/nanoid) generated string. <br>e.g. `jsjxoibprplrdoitjmppotjrnm`
 seq | 1~ | `0-9` | size<br>start | 1<br>1 | 1, 2, 3,...<br>001, 002, 003,...
 prefix-seq | 1~ | `A-Za-z0-9_-` | size<br>start<br>prefix | 1<br>1<br>`<none>` | items-1, items-2, items-3,...<br>items-001, items-002, items-003,...
-date-seq | 1~ | `A-Za-z0-9_-` | size<br>start<br>prefix | 2<br>1<br>YYYYMMDD | 2019102901, 2019102902, 2019103001, ...<br>2019-10-29-001, 2019-10-29-002, 2019-10-30-001,...
+date-seq | 1~ | `A-Za-z0-9_-` | size<br>start<br>prefix (*) | 2<br>1<br>YYYYMMDD | 2019102901, 2019102902, 2019103001, ...<br>2019-10-29-001, 2019-10-29-002, 2019-10-30-001,...
 latin | 1~ | `A-Za-z0-9_-` | separator<br>lowercase | -<br>true | the argument `title` is required.<br> "你好, World!" => ni-hao-world<br>"안녕하세요, 세계" => annyeonghaseyo-segye
 
 Sample of valid `prefix` option for `date-seq`:
@@ -117,6 +118,23 @@ $ hexo new "My New Post"
 INFO  Created: ./source/_posts/ck20kqmij0001ieyn4es62xh7.md
 ```
 
+### 3. Use `hexo new` command with `--type` option
+```sh
+$ hexo new "Hello World!" --type=cuid
+
+INFO  Created: ./source/_posts/ck2c0zo1y0001gyyn5c2ma96m.md
+```
+It also works on `hexo new2` too.
+```sh
+$ hexo new2 "Hello World!" --type=cuid
+
+INFO  Created: ./source/_posts/ck2c0zo1y0001gyyn5c2ma96m.md
+
+$ hexo new2 --type=cuid
+
+INFO  Created: ./source/_posts/ck20kqmij0001ieyn4es62xh7.md
+```
+
 ## Define Custom Functions
 Add a script file into the `scripts` folder of your hexo base directory.
 e.g. scripts/my_custom_path.js
@@ -140,7 +158,7 @@ register('my_custom_path', function(option) {
 #_cofig.yml
 
 + unique_post_path:
-+   path_type: my_custom_path
++   type: my_custom_path
 +   prefix: articles-
 ```
 ```sh

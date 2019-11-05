@@ -5,3 +5,5 @@ require('./id-generators');
 require('./unique_post_path_filter');
 
 require('./register');
+
+require('./new2');

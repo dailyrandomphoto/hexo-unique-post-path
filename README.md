@@ -84,6 +84,7 @@ nanoid-lowercase | 26 | `a-z` | size | 26 | use [nanoid/generate](https://github
 seq | 1~ | `0-9` | size<br>start | 1<br>1 | 1, 2, 3,...<br>001, 002, 003,...
 prefix-seq | 1~ | `A-Za-z0-9_-` | size<br>start<br>prefix | 1<br>1<br>`<none>` | items-1, items-2, items-3,...<br>items-001, items-002, items-003,...
 date-seq | 1~ | `A-Za-z0-9_-` | size<br>start<br>prefix | 2<br>1<br>YYYYMMDD | 2019102901, 2019102902, 2019103001, ...<br>2019-10-29-001, 2019-10-29-002, 2019-10-30-001,...
+latin | 1~ | `A-Za-z0-9_-` | separator<br>lowercase | -<br>true | the argument `title` is required.<br> "你好, World!" => ni-hao-world<br>"안녕하세요, 세계" => annyeonghaseyo-segye
 
 Sample of valid `prefix` option for `date-seq`:
 ```
@@ -150,7 +151,9 @@ $ hexo new2 "Hello World!"
 ## Related
 - [id-generators](https://github.com/dailyrandomphoto/id-generators) - API for this module.
 - [Awesome Unique ID](https://github.com/grantcarthew/awesome-unique-id) - A curated list of awesome Unique ID libraries and resources.
-
+- [transliteration](https://github.com/dzcpy/transliteration) - Universal Unicode to Latin transliteration + slugify module. Works on all platforms and with all major languages.
+- [hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink) - A Hexo plugin to generate static post link based on post titles.
+- [hexo-permalink-pinyin](https://github.com/viko16/hexo-permalink-pinyin) - A Hexo plugin which convert Chinese title to transliterate permalink.
 
 ## License
 Copyright (c) 2019 dailyrandomphoto. Licensed under the [MIT license][license-url].

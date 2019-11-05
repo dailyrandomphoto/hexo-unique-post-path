@@ -1,7 +1,7 @@
 'use strict';
 
-const unique_post_path_filter = require('../lib/unique_post_path_filter');
-const {register} = require('..');
+const unique_post_path_filter = require('hexo-unique-post-path/lib/unique_post_path_filter');
+const {register} = require('hexo-unique-post-path');
 
 describe('register', () => {
   it('should use the custom function to generate a value of path', () => {
@@ -9,7 +9,7 @@ describe('register', () => {
       return title => title.toLowerCase().replace(/[^\w]/g, '');
     });
 
-    const config = {path_type: 'my_path_gen'};
+    const config = {auto: true, path_type: 'my_path_gen'};
     const data = {title: 'Hello World!'};
     unique_post_path_filter(config)(data);
     data.slug.should.eql('helloworld');
@@ -24,7 +24,7 @@ describe('register', () => {
       };
     });
 
-    const config = {path_type: 'my_custom_path', size: 6};
+    const config = {auto: true, path_type: 'my_custom_path', size: 6};
     const data = {title: 'Hello World!'};
     unique_post_path_filter(config)(data);
     data.slug.should.eql('items-hellow');

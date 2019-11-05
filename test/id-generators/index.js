@@ -107,4 +107,5 @@ describe('id-generators', () => {
   require('./seq');
   require('./prefix-seq');
   require('./date-seq');
+  require('./latin');
 });

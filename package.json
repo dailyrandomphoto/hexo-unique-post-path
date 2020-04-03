@@ -11,7 +11,7 @@
     "test:loop": "while npm test --silent; do :; done"
   },
   "dependencies": {
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "hexo-fs": "^2.0.0",
     "id-generators": "^1.0.0",
     "tildify": "^2.0.0",

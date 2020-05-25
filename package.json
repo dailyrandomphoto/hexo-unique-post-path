@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
-    "hexo-fs": "^2.0.0",
+    "hexo-fs": "^3.1.0",
     "id-generators": "^1.0.0",
     "tildify": "^2.0.0",
     "transliteration": "^2.1.7"

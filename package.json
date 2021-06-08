@@ -23,7 +23,7 @@
     "eslint-config-hexo": "^4.0.0",
     "hexo": "^4.0.0",
     "hexo-unique-post-path": "file:.",
-    "mocha": "^6.2.1",
+    "mocha": "^9.0.0",
     "moment": "^2.24.0",
     "nyc": "^14.1.1",
     "sinon": "^7.5.0"

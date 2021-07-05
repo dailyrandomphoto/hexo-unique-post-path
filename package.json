@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^6.7.2",
+    "eslint": "^7.30.0",
     "eslint-config-hexo": "^4.0.0",
     "hexo": "^4.0.0",
     "hexo-unique-post-path": "file:.",
